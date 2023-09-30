@@ -153,7 +153,7 @@ bool Solitaire__move_between_tableau(SolitaireTable *slt, int dest_i, int src_i,
         return false;
     Card *src_last = CardPile__card_at(src, n - 1);
     Card *dest_top = CardPile__top(dest);
-    if (!Card__is_alternating(dest_top, src_last))
+    if (Card__position(src_last) == FACEDOWN || !Card__is_alternating(dest_top, src_last))
         return false;
     CardPile__transfer(dest, src, n);
     Solitaire__reveal_tableau(slt, src_i);
