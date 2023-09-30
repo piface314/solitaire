@@ -57,7 +57,7 @@ void Game__play_interactive(SolitaireTable *slt) {
         printf("DB \t\t\t- descarte para base\n");
         printf("DT (1..%d) \t\t- descarte para tableau\n", N_LINES);
         printf("TB (1..%d) \t\t- tableau para base\n", N_LINES);
-        printf("BT [CPOE] (1..%d) \t\t- base para tableau\n", N_LINES);
+        printf("BT [CPOE] (1..%d) \t- base para tableau\n", N_LINES);
         printf("TT (1..) (1..%d) (1..%d) \t- tableau para tableau\n", N_LINES, N_LINES);
         printf("X - sair\n");
         if (!Game__do_action(slt, stdin))
@@ -89,7 +89,7 @@ void Game__play_batch(SolitaireTable *slt, FILE *f) {
     printf("\n----------------\n\n");
     Solitaire__show(slt);
     if (Solitaire__check_win(slt))
-        printf("VITÓRIA!");
+        printf("VITÓRIA!\n");
 }
 
 bool Game__do_action(SolitaireTable *slt, FILE *f) {

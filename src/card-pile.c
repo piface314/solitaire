@@ -105,8 +105,7 @@ void CardPile__show(CardPile *pile, bool only_top) {
     if (only_top) {
         Card__show(&pile->head->next->card);
     } else {
-        CardPile__show_r(pile->head->next->next);
-        Card__show(&pile->head->next->card);
+        CardPile__show_r(pile->head->next);
         printf("\n");
     }
 }
